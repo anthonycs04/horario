@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario Combinado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+            background-image: url('https://www.transparenttextures.com/patterns/hearts.png');
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .mensaje-overlay {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 18px;
+            font-weight: bold;
+            opacity: 1;
+            animation: fadeOut 3s ease-in-out forwards;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            animation: fadeIn 1s ease-in-out;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        td:hover {
+            background-color: rgba(0, 123, 255, 0.1);
+        }
+        .geri {
+            background-color: #fee2d7;
+            transition: transform 0.3s;
+        }
+        .geri:hover {
+            transform: scale(1.05);
+        }
+        .anthony {
+            background-color: #cce5ff;
+            transition: transform 0.3s;
+        }
+        .anthony:hover {
+            transform: scale(1.05);
+        }
+        .combinado {
+            background: linear-gradient(135deg, #fee2d7, #cce5ff);
+            transition: transform 0.3s;
+        }
+        .combinado:hover {
+            transform: scale(1.05);
+        }
+        .leyenda {
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .leyenda span {
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .geri-leyenda {
+            background-color: #fee2d7;
+        }
+        .anthony-leyenda {
+            background-color: #cce5ff;
+        }
+        .combinado-leyenda {
+            background: linear-gradient(135deg, #fee2d7, #cce5ff);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const mensajes = [
+                "Eres increíble, ¡nunca lo olvides! 💖",
+                "Hoy será un gran día, confía en ti. 😊",
+                "¡Mucho éxito en todo lo que hagas! 🌟",
+                "Recuerda que siempre tienes mi apoyo. 💕",
+                "Cada día es una oportunidad para brillar. ✨",
+                "Tu esfuerzo y dedicación valen la pena. 💪",
+                "Sonríe, porque el mundo es mejor con tu felicidad. 😃",
+                "Nunca dudes de lo mucho que vales. 💖",
+                "Confío en ti más de lo que imaginas. 💕",
+                "Eres una persona maravillosa y especial. 🌹",
+                "¡Hoy es un día perfecto para alcanzar tus sueños! 🚀",
+                "No importa qué pase, siempre estaré aquí para ti. ❤️",
+                "Tu luz ilumina mi vida, nunca dejes de brillar. 🌞",
+                "Eres fuerte, inteligente y capaz de todo. 💪",
+                "¡Que este día esté lleno de alegrías y bendiciones! ✨"
+            ];
+            const mensaje = document.createElement("div");
+            mensaje.className = "mensaje-overlay";
+            mensaje.textContent = mensajes[Math.floor(Math.random() * mensajes.length)];
+            document.body.appendChild(mensaje);
+            setTimeout(() => {
+                mensaje.style.opacity = "0";
+                setTimeout(() => mensaje.remove(), 3000);
+            }, 3000);
+        });
+    </script>
+</head>
+<body>
+    <h2>Horario Combinado</h2>
+    <table>
+        <tr>
+            <th>Hora</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+            <th>Sábado</th>
+            <th>Domingo</th>
+        </tr>
+        <tr>
+            <td>08:00 - 09:40</td>
+            <td class="geri">Medicina I (P) - Dra. Rivera</td>
+            <td class="geri">Medicina I (P) - Dra. Rivera</td>
+            <td class="geri">Medicina I (P) - Dra. Rivera</td>
+            <td></td>
+            <td class="geri">Epidemiología Clínica General (T) - Dr. Chávez, Dr. Girón</td>
+            <td class="anthony">Auditoría de Sistemas</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>09:40 - 11:20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="geri">Atención Primaria I - Dr. Vásquez</td>
+            <td class="geri">Atención Primaria I (T) - Dr. Vásquez</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>15:00 - 16:40</td>
+            <td class="combinado">Medicina I (T) - Dra. Rivera / Taller de Emprendimiento y Liderazgo</td>
+            <td class="combinado">Medicina I (T) - Dra. Rivera / Taller de Emprendimiento y Liderazgo</td>
+            <td class="combinado">Medicina I (T) - Dra. Rivera / Tesis</td>
+            <td class="combinado">Medicina I (T) - Dra. Rivera / Auditoria de sistemas</td>
+            <td class="geri">Medicina I (T) - Dra. Rivera</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>16:40 - 18:20</td>
+            <td class="anthony">Taller de Emprendimiento y Liderazgo</td>
+            <td class="geri">Ayuda Diagnóstica - Dra. Janina Ambia</td>
+            <td class="combinado">Medicina I (T) - Dra. Rivera / Tesis</td>
+            <td class="geri">Legislación Médica y Tributación (T) - Dr. Yagua</td>
+            <td class="combinado">Epidemiología Clínica General (P) - Dr. Chávez, Dr. Girón/Auditoria de sistemas</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>18:20 - 20:00</td>
+            <td class="anthony">Seguridad de TI</td>
+            <td class="anthony">Seguridad de TI</td>
+            <td class="anthony">Taller de Tesis II</td>
+            <td class="anthony">Seguridad de TI</td>
+            <td class="geri">Epidemiología Clínica General (P) - Dr. Chávez, Dr. Girón</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>20:00 - 21:40</td>
+            <td class="anthony">Gerencia de TI</td>
+            <td class="anthony">Construcción de Software II</td>
+            <td class="anthony">Construcción de Software II</td>
+            <td class="anthony">Construcción de Software II</td>
+            <td class="anthony">Gerencia de TI</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <div class="leyenda">
+        <span class="geri-leyenda">Geri - Medicina</span>
+        <span class="anthony-leyenda">Anthony - Sistemas</span>
+        <span class="combinado-leyenda">Ambos - Medicina y Sistemas</span>
+    </div>
+</body>
+</html>
